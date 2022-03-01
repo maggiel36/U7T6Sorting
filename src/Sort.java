@@ -86,4 +86,44 @@ public class Sort
     }
     System.out.println("Insertion sort, number of iterations: " + count);
   }
+
+  public static void selectionSortDescending(int[] elements)
+  {
+    int count = 0;
+    for (int i = 0; i < elements.length - 1; i++)
+    {
+      int max = i;
+      for (int j = i + 1; j < elements.length; j++)
+      {
+        if (elements[max] < elements[j])
+        {
+          count++;
+          max = j;
+        }
+      }
+      int temp = elements[max];
+      elements[max] = elements[i];
+      elements[i] = temp;
+    }
+    System.out.println("Selection sort in descending order: " + count);
+  }
+
+  public static void insertionSortDescending(int[] elements)
+  {
+    int count = 0;
+    for (int i = 0; i <= elements.length - 1; i++)
+    {
+      for (int j = i; j <= elements.length - 1; j++)
+      {
+        if (elements[i] < elements[j])
+        {
+          count++;
+          int temp = elements[i];
+          elements[i] = elements[j];
+          elements[j] = temp;
+        }
+      }
+    }
+    System.out.println("Insertion sort in descending order: " + count);
+  }
 }
